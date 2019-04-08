@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+MonthlyBooks::CLI.new.call
+

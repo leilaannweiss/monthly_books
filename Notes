@@ -1,0 +1,14 @@
+ a command line interface for top ten books of the month
+
+  User types top ten books of the month
+  show list of categories of books
+  1.Fiction
+  2.Non Fiction
+  3.Teens and ya
+  4.yYoung readers
+  5.Kids
+
+  which categorie do you want to choose
+  choose 1-5
+
+  then pick book and scrape info

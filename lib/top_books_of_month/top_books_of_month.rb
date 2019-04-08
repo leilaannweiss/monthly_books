@@ -1,6 +1,5 @@
-require "monthly_books/version"
+require_relative "./version"
+require_relative './cli'
 
-module MonthlyBooks
-  class Error < StandardError; end
-  # Your code goes here...
-end
+
+

@@ -1,5 +1,5 @@
 #cli controller
-class MonthlyBooks::CLI
+class TopBooksOfMonth::CLI
 
   def call
     puts "Top Books of the Month:"

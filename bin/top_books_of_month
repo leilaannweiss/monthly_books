@@ -1,5 +1,0 @@
-#!/usr/bin/env ruby
-require './lib/top_books_of_month/top_books_of_month'
-
-TopBooksOfMonth::CLI.new.call
-

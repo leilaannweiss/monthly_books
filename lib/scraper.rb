@@ -8,11 +8,16 @@ class Scraper
 
   def get_list
    page = get_page
-   options = page.css('.item.pb-3.pt-3.border-bottom')
-   rank_list = options.css('h4')
-   overview = options.css('p')
+   page.css('.item.pb-3.pt-3.border-bottom').each do |option|
+   rank = option.css('.col h4').text.strip[0]
+   title = option.css('.col h4').text.strip[4..-1]
+   overview = option.css('p').text.strip
+   url = "https://thegreatestbooks.org" + option.css('.col h4 a').first.attr("href")
    binding.pry
+  end
  end
+
+
 end
 
 

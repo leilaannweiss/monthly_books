@@ -12,3 +12,23 @@
   choose 1-5
 
   then pick book and scrape info
+
+  what a book has
+  1.title
+  2.rating
+  3.author
+  4.price
+  5.overview
+
+  CLI is responsible for the scraper
+  the scraper is going to grab categories
+  categories are going to give books
+  books are going to give- 1.title
+  2.rating
+  3.author
+  4.price
+  5.overview
+
+
+
+

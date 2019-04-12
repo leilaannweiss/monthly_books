@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Scraper
-  # attr_accessor :book
+  attr_accessor :book
   def get_page
     Nokogiri::HTML(open("https://thegreatestbooks.org/"))
   end
@@ -13,7 +13,7 @@ class Scraper
       title = option.css('.col h4').text.strip[4..-1]
       overview = option.css('p').text.strip
       url = "https://thegreatestbooks.org" + option.css('.col h4 a').first.attr("href")
-      Book.new(rank: rank, title: title, overview: overview, url: url)
+      @book = Book.new(rank: rank, title: title, overview: overview, url: url)
 
    end
  end

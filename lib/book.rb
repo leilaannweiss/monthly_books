@@ -16,6 +16,12 @@ class Book
   def self.all
     @@all
   end
+
+  def self.select_book_by_rank(rank)
+    all.find do |book|
+      book.rank == rank
+    end
+  end
 end
 
 

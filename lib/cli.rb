@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class CLI
   def call
     scraper = Scraper.new

@@ -1,33 +1,11 @@
- a command line interface for top ten books of the month
-
-  User types top ten books of the month
-  show list of categories of books
-  1.Fiction
-  2.Non Fiction
-  3.Teens and ya
-  4.yYoung readers
-  5.Kids
-
-  which categorie do you want to choose
-  choose 1-5
-
-  then pick book and scrape info
-
-  what a book has
-  1.title
-  2.rating
-  3.author
-  4.price
-  5.overview
-
-  CLI is responsible for the scraper
-  the scraper is going to grab categories
-  categories are going to give books
-  books are going to give- 1.title
-  2.rating
-  3.author
-  4.price
-  5.overview
+1. run program
+2.greet the user
+3.pick 1-50 to learn more
+4.user puts number
+5.cli returns the title, author, overview
+6.would you liek to see what list the book shows up in
+7. show list
+8. goodbye
 
 
 

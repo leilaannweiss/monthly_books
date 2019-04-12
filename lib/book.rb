@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Book
   attr_accessor :rank, :title, :overview, :url, :table
   @@all = []
@@ -14,6 +16,9 @@ class Book
   def self.all
     @@all
   end
-
-
 end
+
+
+
+
+

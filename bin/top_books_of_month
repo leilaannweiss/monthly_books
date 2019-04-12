@@ -1,13 +1,8 @@
 #!/usr/bin/env ruby
-
-require "require_all"
-require "pry"
+# frozen_string_literal: true
+require 'require_all'
+require 'pry'
 require 'nokogiri'
 require 'open-uri'
-
-
-require_all "./lib/"
-
-
+require_all './lib/'
 CLI.new.call
-

@@ -1,5 +1,7 @@
 class CLI
   def call
-    Scraper.new.get_list
+    scraper = Scraper.new
+    scraper.get_books
+    scraper.showing_list(Book.all.first)
   end
 end

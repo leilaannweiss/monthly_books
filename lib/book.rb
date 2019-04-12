@@ -1,4 +1,4 @@
-class List
+class Book
   attr_accessor :rank, :title, :overview, :url, :table
   @@all = []
 

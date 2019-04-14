@@ -1,14 +1,12 @@
 # frozen_string_literal:true
 
-require 'byebug'
-
 class CLI
   def call
     greeting
-    book_list
+    list_books
 
     input = gets.strip.to_i
-    input_book_condtion(input)
+    input_book_condition(input)
 
     book = lookup_book_by_rank(input)
     book_info(book)
@@ -28,7 +26,7 @@ class CLI
     puts "Enter a number of the book you want (1 - 50) to see more information or type books to see the list again or exit to leave."
   end
 
-  def book_list
+  def list_books
     Scraper.new.get_books
     Book.all.each do |book|
       puts book.rank.to_s + "." + " " + book.title.to_s
@@ -51,9 +49,12 @@ class CLI
     Book.find_by_rank(input)
   end
 
-  def input_book_condtion(input)
+  def input_book_condition(input)
     if input >= 1 && input <= 50
       true
+    elsif "exit"
+      goodbye
+      exit
     else
       puts "Not a valid entry, please choose from 1 - 50"
       call
@@ -64,7 +65,8 @@ class CLI
     if input2 == "yes"
       additional_book_info(book)
     elsif input2 == "exit"
-     exit
+      goodbye
+      exit
     else
       call
     end
@@ -76,6 +78,7 @@ class CLI
     elsif input3 == "open"
       open_url(book)
     elsif input3 == "exit"
+      goodbye
       exit
     else
       puts "Not a valid entry, going back to book list."
@@ -87,39 +90,9 @@ class CLI
     puts "Would you like to see the other top lists this book shows up on?"
   end
 
-  def options(book)
-    puts back
-    puts "#{visit}#{book.title}."
-    puts exit_message
-  end
-
-  # def redirect
-  #   puts "Redirecting back to book list..."
-  #   call
-  # end
-
-  # def end_commands(book)
-  #   input2 = gets.strip.downcase
-  #   if input2 == "another_book"
-  #     call
-  #   elsif input2 == "open"
-  #     open_url(book)
-  #     end_commands(book)
-  #   elsif input2 == "exit"
-  #     exit_cli
-  #   else
-  #     puts "Not a valid entry, going back to book list."
-  #     call
-  #   end
-  # end
-
   def next_steps
     puts "Would you like to view another book or open the webpage?"
     puts "Please type 'another book' or 'open' to proceed"
-  end
-
-  def visit
-    "Type 'open' to visit the Book webpage "
   end
 
   def exit_message
@@ -130,7 +103,7 @@ class CLI
     Launchy.open(book.url.to_s)
   end
 
-  def exit_cli
+  def goodbye
     puts "Goodbye!"
   end
 end

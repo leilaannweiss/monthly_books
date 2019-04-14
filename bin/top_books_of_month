@@ -4,5 +4,9 @@ require 'require_all'
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
+require 'byebug'
+require 'launchy'
+
 require_all './lib/'
+
 CLI.new.call

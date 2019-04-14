@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class Book
   attr_accessor :rank, :title, :overview, :url, :list
   @@all = []
@@ -29,8 +28,3 @@ class Book
     end
   end
 end
-
-
-
-
-

@@ -27,7 +27,7 @@ class CLI
   end
 
   def list_books
-    Scraper.new.get_books
+    Scraper.new.the_books
     Book.all.each do |book|
       puts book.rank.to_s + "." + " " + book.title.to_s
     end
@@ -39,7 +39,7 @@ class CLI
   end
 
   def additional_book_info(book)
-    scraper = Scraper.new.showing_list(book)
+    Scraper.new.showing_list(book)
     puts "Here's more info about #{book.title}:"
     puts "Book lists:"
     book.display_lists
@@ -52,8 +52,7 @@ class CLI
   def input_book_condition(input)
     if input >= 1 && input <= 50
       true
-    elsif "exit"
-      goodbye
+    elsif goodbye
       exit
     else
       puts "Not a valid entry, please choose from 1 - 50"
@@ -107,5 +106,3 @@ class CLI
     puts "Goodbye!"
   end
 end
-
-

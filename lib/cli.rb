@@ -23,7 +23,8 @@ class CLI
   def greeting
     puts "Welcome to The Greatest Books"
     puts "Here is a list of the greatest books:"
-    puts "Enter a number of the book you want (1 - 50) to see more information or type books to see the list again or exit to leave."
+    puts "Enter a number of the book you want (1 - 50) to see more information"
+    puts "Or type books to see the list again or exit to leave."
   end
 
   def list_books

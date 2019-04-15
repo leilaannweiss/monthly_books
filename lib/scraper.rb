@@ -1,6 +1,8 @@
 # frozen_string_literal: true
+
 class Scraper
   attr_accessor :book
+
   def the_page
     Nokogiri::HTML(open("https://thegreatestbooks.org/"))
   end
